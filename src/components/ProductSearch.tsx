@@ -3,8 +3,8 @@ import { useState, useEffect, useRef } from "react";
 import { useProduct } from "@/utils/context/ProductContext";
 import { ProductSearchProps } from "@/utils/types/product-types/product-types";
 
-const ProductSearch: React.FC<ProductSearchProps> = ({ productNames }) => {
-  console.log("inside ProductSearch --> ", productNames);
+const ProductSearch: React.FC<ProductSearchProps> = ({ productInfo }) => {
+  // console.log("inside ProductSearch --> ", productInfo);
 
   const [searchTerm, setSearchTerm] = useState("");
   const [highlightedIndex, setHighlightedIndex] = useState(-1);
@@ -13,13 +13,19 @@ const ProductSearch: React.FC<ProductSearchProps> = ({ productNames }) => {
   const { selectedProd, setSelectedProd } = useProduct();
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const filteredProducts = productNames.filter((product) =>
-    product.toLowerCase().includes(searchTerm.toLowerCase())
+  // const filteredProducts = productInfo
+  //   .map((item) => item.productName)
+  //   .filter((product) =>
+  //     product.toLowerCase().includes(searchTerm.toLowerCase())
+  //   );
+
+  const filteredProducts = productInfo.filter((item) =>
+    item.productName.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   const handleProductSelect = (product) => {
     setSelectedProd(product);
-    setSearchTerm(product);
+    setSearchTerm(product.productName);
     setDropdownOpen(false);
   };
 
@@ -100,13 +106,13 @@ const ProductSearch: React.FC<ProductSearchProps> = ({ productNames }) => {
           {filteredProducts.length > 0 ? (
             filteredProducts.map((product, index) => (
               <li
-                key={product}
+                key={product.productId}
                 onClick={() => handleProductSelect(product)}
                 className={`cursor-pointer p-2 hover:bg-gray-200 ${
                   index === highlightedIndex ? "bg-gray-300" : ""
                 }`}
               >
-                {product}
+                {product.productName}
               </li>
             ))
           ) : (

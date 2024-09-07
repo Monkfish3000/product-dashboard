@@ -21,15 +21,21 @@ export const getAllData = async () => {
   }
 };
 
-export const getProductNames = async () => {
+export const getProductInfo = async () => {
   const data = await getAllData();
 
   if (!data) {
-    console.log("Failed to fetch product names");
+    console.log("Failed to fetch product info");
     return null;
   }
 
-  const productNames = data.map((item) => item.product.name);
+  const productInfo = data.map((item) => {
+    return {
+      productName: item.product.name,
+      productId: item.product.id,
+      productInventory: item.inventory,
+    };
+  });
 
-  return productNames;
+  return productInfo;
 };

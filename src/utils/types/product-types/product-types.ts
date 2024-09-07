@@ -1,3 +1,9 @@
 export type ProductSearchProps = {
-  productNames: string[];
+  productInfo: ProductInfo;
+};
+
+type ProductInfo = {
+  productName: string;
+  productId: number;
+  productInventory: number;
 };
