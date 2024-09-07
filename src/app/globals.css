@@ -73,5 +73,5 @@ nav input {
 }
 
 .productInfo {
-  @apply opacity-50 shadow-lg rounded-lg p-4 mt-4 max-w-md ml-0 mx-auto border;
+  @apply text-primary-black shadow-lg rounded-lg p-4 mt-4 max-w-md ml-0 mx-auto border;
 }
