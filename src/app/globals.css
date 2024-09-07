@@ -58,3 +58,20 @@
   top: 80px;
   opacity: 0.15;
 }
+
+/* TAILWIND */
+main {
+  @apply text-primary-black relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6;
+}
+
+nav {
+  @apply text-primary-black py-4 px-6 shadow-lg flex items-center w-full;
+}
+
+nav input {
+  @apply w-2/3 px-4 py-2 text-primary-black rounded-md focus:outline-none focus:border-primary-black focus:ring-1 focus:ring-primary-black;
+}
+
+.productInfo {
+  @apply opacity-50 shadow-lg rounded-lg p-4 mt-4 max-w-md ml-0 mx-auto border;
+}
