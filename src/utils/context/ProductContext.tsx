@@ -4,6 +4,7 @@ import { createContext, useContext, useState, ReactNode } from "react";
 
 type ProductContextType = {
   selectedProd: string;
+  productId: number;
   setSelectedProd: (product: string) => void;
 };
 
