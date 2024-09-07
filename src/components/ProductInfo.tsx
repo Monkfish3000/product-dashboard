@@ -10,8 +10,8 @@ const ProductInfo = () => {
 
   return selectedProd ? (
     <div className="productInfo">
-      <h1 className="text-xl font-semibold">{`Viewing data for ${productName}`}</h1>
-      <p className="text-gray-600">{`In Stock: ${productInventory} items`}</p>
+      <h1 className="text-xl font-bold">{`Viewing data for ${productName}`}</h1>
+      <p>{`In Stock: ${productInventory} items`}</p>
     </div>
   ) : null;
 };
