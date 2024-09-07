@@ -1,24 +1,24 @@
 "use client";
-
-import { ProductSearchProps } from "@/utils/types/product-types/product-types";
 import { useState, useEffect, useRef } from "react";
+import { useProduct } from "@/utils/context/ProductContext";
+import { ProductSearchProps } from "@/utils/types/product-types/product-types";
 
 const ProductSearch: React.FC<ProductSearchProps> = ({ productNames }) => {
   console.log("inside ProductSearch --> ", productNames);
 
   const [searchTerm, setSearchTerm] = useState("");
   const [highlightedIndex, setHighlightedIndex] = useState(-1);
-  const [selectedProduct, setSelectedProduct] = useState("");
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  const dropdownRef = useRef(null);
+  const { selectedProd, setSelectedProd } = useProduct();
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const filteredProducts = productNames.filter((product) =>
     product.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   const handleProductSelect = (product) => {
-    setSelectedProduct(product);
+    setSelectedProd(product);
     setSearchTerm(product);
     setDropdownOpen(false);
   };
@@ -79,6 +79,8 @@ const ProductSearch: React.FC<ProductSearchProps> = ({ productNames }) => {
       document.removeEventListener("keydown", handleKeyNavigation);
     };
   }, [dropdownOpen, highlightedIndex, filteredProducts]);
+
+  console.log("inside ProductSearch --> ", selectedProd);
 
   return (
     <div ref={dropdownRef} className="relative w-full max-w-lg">
