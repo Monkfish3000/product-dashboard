@@ -3,7 +3,7 @@ export const getAllData = async () => {
   const oneHour = 3600;
 
   try {
-    const res = await fetch("http://localhost:3005/data/data.json", {
+    const res = await fetch("http://localhost:3000/data/data.json", {
       next: { revalidate: oneHour },
     });
 
