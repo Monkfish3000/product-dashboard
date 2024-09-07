@@ -13,13 +13,7 @@ const ProductSearch: React.FC<ProductSearchProps> = ({ productInfo }) => {
   const { selectedProd, setSelectedProd } = useProduct();
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // const filteredProducts = productInfo
-  //   .map((item) => item.productName)
-  //   .filter((product) =>
-  //     product.toLowerCase().includes(searchTerm.toLowerCase())
-  //   );
-
-  const filteredProducts = productInfo.filter((item) =>
+  const filteredProducts = productInfo.filter((item: string) =>
     item.productName.toLowerCase().includes(searchTerm.toLowerCase())
   );
 

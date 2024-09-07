@@ -1,9 +1,15 @@
+import { getSalesData } from "@/utils/getData";
+
 import LineChart from "./LineChart";
 
-const ChartsContainer = () => {
+const ChartsContainer = async () => {
+  const salesData = await getSalesData();
+
+  console.log("inside ChartsContainer --> ", salesData);
+
   return (
     <div className="chartsContainer">
-      <LineChart />
+      <LineChart salesData={salesData} />
     </div>
   );
 };

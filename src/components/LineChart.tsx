@@ -13,6 +13,8 @@ import {
 } from "recharts";
 
 import { prepareSalesData } from "../utils/helpers/salesHelpers";
+import { useProduct } from "@/utils/context/ProductContext";
+import { SalesData } from "@/utils/types/sales-types/sales-types";
 
 const chartsOverTime = ["Sales Over Time", "Conversion Rate Over Time"];
 
@@ -33,7 +35,11 @@ const sales = [
   { date: "2023-11-29", sales: 7 },
 ];
 
-const LineChart = () => {
+const LineChart: React.FC<{ salesData: SalesData }> = ({ salesData }) => {
+  const { selectedProd } = useProduct();
+  console.log("inside LineChart --> ", selectedProd);
+  console.log("inside LineChart salesData --> ", salesData);
+
   // state for first two charts timeframe - initally 12 months
   const [selectedTimeFrames, setSelectedTimeFrames] = useState({
     0: "12",
@@ -50,7 +56,7 @@ const LineChart = () => {
 
   console.log("selectedTimeFrames --> ", selectedTimeFrames);
 
-  return (
+  return selectedProd ? (
     <>
       <h2 className="text-xl mb-4">Product Sales</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -65,7 +71,7 @@ const LineChart = () => {
               key={index}
               className="bg-primary-white shadow-xl rounded-xl opacity-50 h-96"
             >
-              <div className="flex justify-end space-x-2 mb-4">
+              <div className="flex justify-end space-x-2 mb-4 pt-1 pr-1">
                 {/* TODO - btns could be a separate component */}
                 <button
                   className={`timeFrameBtn ${
@@ -143,7 +149,7 @@ const LineChart = () => {
         <span>Customer Reviews Trend</span>
       </div>
     </>
-  );
+  ) : null;
 };
 
 export default LineChart;
