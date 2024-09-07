@@ -82,11 +82,20 @@
     },
     "inventory": 90,
     "sales": [
-      { "date": "2023-09-01", "sales": 25 },
-      { "date": "2023-08-01", "sales": 40 },
-      { "date": "2023-07-01", "sales": 45 },
-      { "date": "2023-06-01", "sales": 35 },
-      { "date": "2023-05-01", "sales": 30 }
+      { "date": "2024-09-15", "sales": 12 },
+      { "date": "2024-09-27", "sales": 10 },
+      { "date": "2024-08-09", "sales": 16 },
+      { "date": "2024-08-22", "sales": 5 },
+      { "date": "2024-07-10", "sales": 7 },
+      { "date": "2024-07-18", "sales": 9 },
+      { "date": "2024-06-08", "sales": 14 },
+      { "date": "2024-05-11", "sales": 15 },
+      { "date": "2024-04-05", "sales": 6 },
+      { "date": "2024-03-19", "sales": 13 },
+      { "date": "2024-02-12", "sales": 11 },
+      { "date": "2023-12-02", "sales": 4 },
+      { "date": "2023-11-13", "sales": 6 },
+      { "date": "2023-11-27", "sales": 8 }
     ],
     "conversionRates": [
       { "date": "2023-09-01", "conversionRate": 3.0 },
@@ -115,10 +124,20 @@
     },
     "inventory": 200,
     "sales": [
-      { "date": "2023-09-01", "sales": 60 },
-      { "date": "2023-08-01", "sales": 55 },
-      { "date": "2023-07-01", "sales": 50 },
-      { "date": "2023-06-01", "sales": 65 }
+      { "date": "2024-09-02", "sales": 14 },
+      { "date": "2024-09-28", "sales": 9 },
+      { "date": "2024-08-03", "sales": 13 },
+      { "date": "2024-08-21", "sales": 7 },
+      { "date": "2024-07-07", "sales": 8 },
+      { "date": "2024-07-15", "sales": 10 },
+      { "date": "2024-06-02", "sales": 11 },
+      { "date": "2024-05-19", "sales": 12 },
+      { "date": "2024-04-08", "sales": 9 },
+      { "date": "2024-03-24", "sales": 8 },
+      { "date": "2024-02-10", "sales": 10 },
+      { "date": "2023-12-15", "sales": 5 },
+      { "date": "2023-11-19", "sales": 7 },
+      { "date": "2023-11-25", "sales": 9 }
     ],
     "conversionRates": [
       { "date": "2023-09-01", "conversionRate": 4.0 },
@@ -143,8 +162,20 @@
     },
     "inventory": 70,
     "sales": [
-      { "date": "2023-09-01", "sales": 20 },
-      { "date": "2023-08-01", "sales": 25 }
+      { "date": "2024-09-18", "sales": 11 },
+      { "date": "2024-09-25", "sales": 10 },
+      { "date": "2024-08-13", "sales": 12 },
+      { "date": "2024-08-27", "sales": 9 },
+      { "date": "2024-07-06", "sales": 6 },
+      { "date": "2024-07-20", "sales": 8 },
+      { "date": "2024-06-09", "sales": 13 },
+      { "date": "2024-05-17", "sales": 14 },
+      { "date": "2024-04-04", "sales": 4 },
+      { "date": "2024-03-11", "sales": 7 },
+      { "date": "2024-02-21", "sales": 9 },
+      { "date": "2023-12-09", "sales": 6 },
+      { "date": "2023-11-23", "sales": 5 },
+      { "date": "2023-11-30", "sales": 6 }
     ],
     "conversionRates": [{ "date": "2023-09-01", "conversionRate": 3.9 }],
     "reviewsTrend": [{ "date": "2023-09-01", "rating": 4.8 }],
@@ -162,7 +193,22 @@
       "name": "Electro-Harmonix Holy Grail Reverb"
     },
     "inventory": 50,
-    "sales": [{ "date": "2023-09-01", "sales": 15 }],
+    "sales": [
+      { "date": "2024-09-03", "sales": 10 },
+      { "date": "2024-09-20", "sales": 9 },
+      { "date": "2024-08-07", "sales": 13 },
+      { "date": "2024-08-30", "sales": 8 },
+      { "date": "2024-07-12", "sales": 6 },
+      { "date": "2024-07-19", "sales": 7 },
+      { "date": "2024-06-11", "sales": 10 },
+      { "date": "2024-05-22", "sales": 12 },
+      { "date": "2024-04-17", "sales": 5 },
+      { "date": "2024-03-07", "sales": 8 },
+      { "date": "2024-02-05", "sales": 10 },
+      { "date": "2023-12-04", "sales": 4 },
+      { "date": "2023-11-15", "sales": 6 },
+      { "date": "2023-11-24", "sales": 9 }
+    ],
     "conversionRates": [{ "date": "2023-09-01", "conversionRate": 3.5 }],
     "reviewsTrend": [{ "date": "2023-09-01", "rating": 4.9 }],
     "latestComments": [
