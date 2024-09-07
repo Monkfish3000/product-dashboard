@@ -1,9 +1,10 @@
 "use client";
 
+import { ProductSearchProps } from "@/utils/types/product-types/product-types";
 import { useState, useEffect, useRef } from "react";
 
-const ProductSearch = ({ products }) => {
-  console.log("inside ProductSearch --> ", products);
+const ProductSearch: React.FC<ProductSearchProps> = ({ productNames }) => {
+  console.log("inside ProductSearch --> ", productNames);
 
   const [searchTerm, setSearchTerm] = useState("");
   const [highlightedIndex, setHighlightedIndex] = useState(-1);
@@ -12,7 +13,7 @@ const ProductSearch = ({ products }) => {
 
   const dropdownRef = useRef(null);
 
-  const filteredProducts = products.filter((product) =>
+  const filteredProducts = productNames.filter((product) =>
     product.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
@@ -24,13 +25,13 @@ const ProductSearch = ({ products }) => {
 
   // handle closing the dropdown from user interaction
   useEffect(() => {
-    const handleClickOutside = (event) => {
+    const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setDropdownOpen(false);
       }
     };
 
-    const handleEscKeyDown = (event) => {
+    const handleEscKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         setDropdownOpen(false);
       }
@@ -51,7 +52,7 @@ const ProductSearch = ({ products }) => {
 
   // Handle keyboard selecting options
   useEffect(() => {
-    const handleKeyNavigation = (event) => {
+    const handleKeyNavigation = (event: KeyboardEvent) => {
       if (!dropdownOpen) return;
 
       if (event.key === "ArrowDown") {
@@ -97,7 +98,7 @@ const ProductSearch = ({ products }) => {
           {filteredProducts.length > 0 ? (
             filteredProducts.map((product, index) => (
               <li
-                key={index}
+                key={product}
                 onClick={() => handleProductSelect(product)}
                 className={`cursor-pointer p-2 hover:bg-gray-200 ${
                   index === highlightedIndex ? "bg-gray-300" : ""

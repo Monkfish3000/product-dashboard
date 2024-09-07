@@ -2,13 +2,13 @@ import { getProductNames } from "@/utils/getData";
 import { ProductSearch } from "@/components";
 
 const Nav = async () => {
-  const data = await getProductNames();
+  const productNames = await getProductNames();
 
-  // console.log("data in Nav -> ", data);
+  console.log("data in Nav -> ", productNames);
   return (
     <nav>
       {/* Search Bar */}
-      <ProductSearch products={data} />
+      <ProductSearch productNames={productNames} />
     </nav>
   );
 };
