@@ -12,7 +12,7 @@ import {
   Legend,
 } from "recharts";
 
-import { prepareData } from "../utils/helpers/salesHelpers";
+import { prepareData } from "../../utils/helpers/salesHelpers";
 import { useProduct } from "@/utils/context/ProductContext";
 
 export const TrendChart = ({ customerRatingsData }) => {

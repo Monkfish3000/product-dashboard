@@ -1,6 +1,6 @@
 import { getAvgRating, getConversionData, getSalesData } from "@/utils/getData";
 
-import LineChart from "./LineChart";
+import LineChart from "../functional/LineChart";
 
 const ChartsContainer = async () => {
   const salesData = await getSalesData();
