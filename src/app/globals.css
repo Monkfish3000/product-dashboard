@@ -91,3 +91,41 @@ nav input {
 .chartHeader {
   @apply text-xl mb-4;
 }
+
+/* Comments Styling */
+.commentsSection {
+  padding: 1.5rem;
+  background-color: #f9f9f9;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.commentsSection h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.comment {
+  padding: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.comment:last-child {
+  border-bottom: none;
+}
+
+.comment p {
+  margin: 0.5rem 0;
+}
+
+.comment strong {
+  display: block;
+  font-weight: 600;
+  color: #555;
+}
+
+.comment p:last-child {
+  color: #666;
+}

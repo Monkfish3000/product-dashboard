@@ -1,4 +1,9 @@
-import { ChartsContainer, Nav, ProductInfo } from "@/components";
+import {
+  ChartsContainer,
+  Nav,
+  ProductInfo,
+  CommentsContainer,
+} from "@/components";
 
 export default async function Dashboard() {
   return (
@@ -6,6 +11,7 @@ export default async function Dashboard() {
       <Nav />
       <ProductInfo />
       <ChartsContainer />
+      <CommentsContainer />
     </>
   );
 }

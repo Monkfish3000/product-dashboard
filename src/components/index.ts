@@ -5,3 +5,5 @@ export { default as ChartsContainer } from "./visual/ChartsContainer";
 export { default as LineChart } from "./functional/LineChart";
 export { default as TrendChart } from "./functional/TrendChart";
 export { default as MonthPicker } from "./common/MonthPicker";
+export { default as CommentsContainer } from "./visual/CommentsContainer";
+export { default as Comments } from "./functional/Comments";

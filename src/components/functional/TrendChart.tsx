@@ -16,7 +16,7 @@ import { prepareData } from "../../utils/helpers/data-helpers";
 import { useProduct } from "@/utils/context/ProductContext";
 import { RatingsData } from "@/utils/types/ratings-types/ratings-types";
 
-import { MonthPicker } from "..";
+import { MonthPicker } from "@/components";
 
 const TrendChart: React.FC<{ customerRatingsData: RatingsData }> = ({
   customerRatingsData,
