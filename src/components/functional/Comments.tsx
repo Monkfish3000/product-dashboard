@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 
 import { useProduct } from "@/utils/context/ProductContext";
-import { CommentData } from "@/utils/types/comments-types/comments-types";
+import { CommentData } from "@/utils/types";
 
 const Comment: React.FC<{ commentsData: CommentData[] }> = ({
   commentsData,
