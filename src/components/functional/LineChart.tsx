@@ -14,9 +14,8 @@ import {
 
 import { prepareData } from "../../utils/helpers/data-helpers";
 import { useProduct } from "@/utils/context/ProductContext";
-import { SalesData } from "@/utils/types/sales-types/sales-types";
-import { ConversionData } from "@/utils/types/conversion-types/conversion-types";
-import { RatingsData } from "@/utils/types/ratings-types/ratings-types";
+import { SalesData, ConversionData, RatingsData } from "@/utils/types";
+
 import { DownloadReport, MonthPicker, TrendChart } from "@/components";
 
 const chartsOverTime = ["Sales Over Time", "Conversion Rate Over Time"];

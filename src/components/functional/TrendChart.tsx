@@ -14,7 +14,7 @@ import {
 
 import { prepareData } from "../../utils/helpers/data-helpers";
 import { useProduct } from "@/utils/context/ProductContext";
-import { RatingsData } from "@/utils/types/ratings-types/ratings-types";
+import { RatingsData } from "@/utils/types";
 
 import { DownloadReport, MonthPicker } from "@/components";
 

@@ -1,10 +1,8 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import { useProduct } from "@/utils/context/ProductContext";
-import {
-  ProductInfo,
-  ProductSearchProps,
-} from "@/utils/types/product-types/product-types";
+
+import { ProductInfo, ProductSearchProps } from "@/utils/types";
 
 const ProductSearch: React.FC<ProductSearchProps> = ({ productInfo }) => {
   // console.log("inside ProductSearch --> ", productInfo);
