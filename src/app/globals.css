@@ -91,7 +91,12 @@ nav input {
 }
 
 .timeFrameBtn {
-  @apply px-3 py-1 rounded-lg text-sm font-medium border;
+  @apply px-3 py-1 rounded-lg text-sm font-medium border
+  transition duration-300 ease-in-out transform 
+  /* hover */
+  hover:bg-white hover:text-gray-700 hover:scale-105 hover:border-primary-gray 
+  /* focus */
+  focus:outline-none focus:ring-2 focus:ring-primary-gray focus:ring-opacity-50;
 }
 
 .chartHeader {
