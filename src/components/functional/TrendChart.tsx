@@ -14,8 +14,11 @@ import {
 
 import { prepareData } from "../../utils/helpers/salesHelpers";
 import { useProduct } from "@/utils/context/ProductContext";
+import { RatingsData } from "@/utils/types/ratings-types/ratings-types";
 
-export const TrendChart = ({ customerRatingsData }) => {
+export const TrendChart: React.FC<{ customerRatingsData: RatingsData }> = ({
+  customerRatingsData,
+}) => {
   const { selectedProd } = useProduct();
   const [selectedReviewsTrend, setSelectedReviewsTrends] = useState<any[]>([]);
   const [timeFrame, setTimeFrame] = useState("12");
@@ -36,9 +39,7 @@ export const TrendChart = ({ customerRatingsData }) => {
         (data) => data.productId === selectedProd.productId
       );
 
-      console.log(reviewsTrend.avgRating);
-
-      setSelectedReviewsTrends(reviewsTrend ? reviewsTrend.avgRating : []);
+      setSelectedReviewsTrends(reviewsTrend ? [reviewsTrend.avgRating] : []);
     }
 
     console.log(selectedReviewsTrend);
