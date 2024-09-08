@@ -130,10 +130,29 @@
     "latestComments": [
       {
         "id": 1,
-        "author": "Mike Stone",
-        "text": "Big, thick distortion, love it!"
+        "author": "Chris Taylor",
+        "text": "Massive fuzz, just what I needed for those heavy riffs."
       },
-      { "id": 2, "author": "Laura Lee", "text": "Best fuzz pedal out there." }
+      {
+        "id": 2,
+        "author": "Lisa Collins",
+        "text": "Raw, powerful, and perfect for grunge."
+      },
+      {
+        "id": 3,
+        "author": "Jack W.",
+        "text": "A key part of my tone. Adds depth and warmth."
+      },
+      {
+        "id": 4,
+        "author": "Emily Brown",
+        "text": "It’s a fuzz pedal classic for a reason!"
+      },
+      {
+        "id": 5,
+        "author": "Michael Harris",
+        "text": "Love the sustain and the rich harmonic overtones."
+      }
     ]
   },
   {
@@ -189,8 +208,28 @@
     "latestComments": [
       {
         "id": 1,
-        "author": "Sarah Quinn",
-        "text": "Solid distortion, great for punk and rock."
+        "author": "Sarah Johnson",
+        "text": "A staple in my rig for that classic distortion."
+      },
+      {
+        "id": 2,
+        "author": "David Evans",
+        "text": "Perfect for cutting through the mix with sharp, crisp distortion."
+      },
+      {
+        "id": 3,
+        "author": "Jessica Lee",
+        "text": "The DS-1 gives me that crunchy, defined sound I love."
+      },
+      {
+        "id": 4,
+        "author": "Brian Carter",
+        "text": "It’s reliable and sounds great on every setting."
+      },
+      {
+        "id": 5,
+        "author": "Olivia Clark",
+        "text": "You just can't go wrong with this pedal, no matter the genre."
       }
     ]
   },
@@ -247,8 +286,28 @@
     "latestComments": [
       {
         "id": 1,
-        "author": "Tony Martinez",
-        "text": "Best delay pedal I've ever owned."
+        "author": "Anna White",
+        "text": "Incredible analog delay, warm and natural."
+      },
+      {
+        "id": 2,
+        "author": "Jonny Greenwood",
+        "text": "The modulation is subtle, but it adds so much texture."
+      },
+      {
+        "id": 3,
+        "author": "Sophia Scott",
+        "text": "The repeats are lush and sit perfectly in the mix."
+      },
+      {
+        "id": 4,
+        "author": "Jacob Young",
+        "text": "Beautiful delay pedal with rich, dark repeats."
+      },
+      {
+        "id": 5,
+        "author": "Grace Wilson",
+        "text": "It’s analog, and it’s brilliant. So musical!"
       }
     ]
   },
@@ -305,8 +364,28 @@
     "latestComments": [
       {
         "id": 1,
-        "author": "David Ross",
-        "text": "Amazing reverb, versatile and lush."
+        "author": "Kurt C.",
+        "text": "The spring reverb is spot on, and the Flerb is just fun."
+      },
+      {
+        "id": 2,
+        "author": "Megan Adams",
+        "text": "Great, spacious reverb. It’s on my board for a reason."
+      },
+      {
+        "id": 3,
+        "author": "Daniel Cooper",
+        "text": "The hall setting is breathtaking, fills the room perfectly."
+      },
+      {
+        "id": 4,
+        "author": "Zoe Roberts",
+        "text": "Versatile, with a classic tone that brings life to the guitar sound."
+      },
+      {
+        "id": 5,
+        "author": "Lucas King",
+        "text": "It’s ethereal and magical, great for ambient sounds."
       }
     ]
   }

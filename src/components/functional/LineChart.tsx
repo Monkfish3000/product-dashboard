@@ -12,12 +12,12 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-import { prepareData } from "../../utils/helpers/salesHelpers";
+import { prepareData } from "../../utils/helpers/data-helpers";
 import { useProduct } from "@/utils/context/ProductContext";
 import { SalesData } from "@/utils/types/sales-types/sales-types";
 import { ConversionData } from "@/utils/types/conversion-types/conversion-types";
 import { RatingsData } from "@/utils/types/ratings-types/ratings-types";
-import { MonthPicker, TrendChart } from "..";
+import { MonthPicker, TrendChart } from "@/components";
 
 const chartsOverTime = ["Sales Over Time", "Conversion Rate Over Time"];
 
