@@ -1,9 +1,14 @@
 export type ProductSearchProps = {
-  productInfo: ProductInfo;
+  productInfo: ProductInfo[];
 };
 
-type ProductInfo = {
+export type ProductInfo = {
   productName: string;
   productId: number;
   productInventory: number;
+};
+
+export type ProductContextType = {
+  selectedProd: ProductInfo | null;
+  setSelectedProd: (product: ProductInfo) => void;
 };

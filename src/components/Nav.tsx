@@ -3,10 +3,11 @@ import { ProductSearch } from "@/components";
 
 const Nav = async () => {
   const productInfo = await getProductInfo();
-  const data = await getAllData();
+  // const data = await getAllData();
 
-  console.log("data in Nav -> ", productInfo);
-  console.log("ALL DATA in Nav -> ", data);
+  // console.log("productInfo in Nav -> ", productInfo);
+  // console.log("ALL DATA in Nav -> ", data);
+
   return (
     <nav>
       {/* Search Bar */}

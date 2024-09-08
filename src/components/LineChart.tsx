@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import {
   LineChart as Chart,
@@ -12,30 +12,30 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-import { prepareSalesData } from "../utils/helpers/salesHelpers";
+import { prepareData } from "../utils/helpers/salesHelpers";
+import { useProduct } from "@/utils/context/ProductContext";
+import { SalesData } from "@/utils/types/sales-types/sales-types";
+import { ConversionData } from "@/utils/types/converion-types/converion-types";
 
 const chartsOverTime = ["Sales Over Time", "Conversion Rate Over Time"];
 
-const sales = [
-  { date: "2024-09-12", sales: 10 },
-  { date: "2024-09-23", sales: 8 },
-  { date: "2024-08-05", sales: 15 },
-  { date: "2024-08-17", sales: 7 },
-  { date: "2024-07-11", sales: 9 },
-  { date: "2024-07-22", sales: 6 },
-  { date: "2024-06-04", sales: 12 },
-  { date: "2024-05-09", sales: 14 },
-  { date: "2024-04-15", sales: 5 },
-  { date: "2024-03-12", sales: 11 },
-  { date: "2024-02-18", sales: 13 },
-  { date: "2023-12-10", sales: 6 },
-  { date: "2023-11-21", sales: 8 },
-  { date: "2023-11-29", sales: 7 },
-];
+const LineChart: React.FC<{
+  salesData: SalesData;
+  conversionData: ConversionData;
+}> = ({ salesData, conversionData }) => {
+  const { selectedProd } = useProduct();
 
-const LineChart = () => {
-  // state for first two charts timeframe - initally 12 months
-  const [selectedTimeFrames, setSelectedTimeFrames] = useState({
+  const [selectedSales, setSelectedSales] = useState<any[]>([]);
+  const [selectedConvRate, setSelectedConvRate] = useState<any>([]);
+
+  // console.log("inside LineChart --> ", selectedProd);
+  // console.log("inside LineChart salesData --> ", salesData);
+  console.log("inside LineChart conversionData --> ", conversionData);
+
+  // track first two charts timeframe - initally 12 months
+  const [selectedTimeFrames, setSelectedTimeFrames] = useState<
+    Record<number, string>
+  >({
     0: "12",
     1: "12",
   });
@@ -48,25 +48,53 @@ const LineChart = () => {
     }));
   };
 
-  console.log("selectedTimeFrames --> ", selectedTimeFrames);
+  // set sales & conversion rate data for selectedProduct
+  useEffect(() => {
+    if (selectedProd) {
+      const productSales = salesData.find(
+        (data) => data.productId === selectedProd.productId
+      );
+      const conversionRates = conversionData.find(
+        (data) => data.productId === selectedProd.productId
+      );
 
-  return (
+      // console.log("inside useEffect --> ", conversionRates);
+
+      setSelectedSales(productSales ? productSales.sales : []);
+      setSelectedConvRate(
+        conversionRates ? conversionRates.conversionRate : []
+      );
+
+      // console.log("inside useEffect --> ", selectedConvRate);
+      // console.log("inside useEffect selectedSales --> ", selectedSales);
+    }
+  }, [selectedProd, salesData, conversionData]);
+
+  //   console.log("selectedTimeFrames --> ", selectedTimeFrames);
+
+  return selectedProd ? (
     <>
       <h2 className="text-xl mb-4">Product Sales</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {chartsOverTime.map((chart, index) => {
-          const filteredSalesData = prepareSalesData(
-            sales,
-            selectedTimeFrames[index]
-          );
+          const chartData =
+            index === 0
+              ? prepareData(selectedSales, selectedTimeFrames[index], "sales")
+              : prepareData(
+                  selectedConvRate,
+                  selectedTimeFrames[index],
+                  "conversionRate"
+                );
+
+          console.log("inside return chartData --> ", chartData);
 
           return (
             <div
               key={index}
               className="bg-primary-white shadow-xl rounded-xl opacity-50 h-96"
             >
-              <div className="flex justify-end space-x-2 mb-4">
-                {/* TODO - btns could be a separate component */}
+              <div className="flex justify-end space-x-2 mb-4 pt-1 pr-1">
+                {/* TODO - btns should be a separate component */}
                 <button
                   className={`timeFrameBtn ${
                     selectedTimeFrames[index] === "1"
@@ -110,7 +138,7 @@ const LineChart = () => {
               </div>
               <ResponsiveContainer width="100%" height="100%">
                 <Chart
-                  data={filteredSalesData}
+                  data={chartData}
                   margin={{
                     top: 20,
                     right: 30,
@@ -130,7 +158,11 @@ const LineChart = () => {
                   <YAxis />
                   <Tooltip />
                   <Legend />
-                  <Line type="monotone" dataKey="sales" stroke="#8884d8" />
+                  <Line
+                    type="monotone"
+                    dataKey={index === 0 ? "sales" : "conversionRate"}
+                    stroke="#8884d8"
+                  />
                 </Chart>
               </ResponsiveContainer>
             </div>
@@ -143,7 +175,7 @@ const LineChart = () => {
         <span>Customer Reviews Trend</span>
       </div>
     </>
-  );
+  ) : null;
 };
 
 export default LineChart;

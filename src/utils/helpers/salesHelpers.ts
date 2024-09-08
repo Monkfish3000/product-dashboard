@@ -15,29 +15,47 @@ const generateMonths = () => {
   return months;
 };
 
-// map sales data to months
-// TODO - sales Types
-export const prepareSalesData = (sales: string[], timeFrame: string) => {
+// normalise data for LineChart
+export const prepareData = (
+  data: { date: string; sales?: number; conversionRate?: number }[],
+  timeFrame: string,
+  key: "sales" | "conversionRate"
+) => {
   const months = generateMonths();
-  const salesDataMap = sales.reduce((acc, sale) => {
-    const saleMonth = format(new Date(sale.date), "yyyy-MM");
-    acc[saleMonth] = sale.sales;
+  const dataMap = data.reduce<Record<string, number>>((acc, item) => {
+    // check format of date
+    const dataMonth =
+      item.date.length > 7 ? format(new Date(item.date), "yyyy-MM") : item.date;
+
+    const value = key === "sales" ? item.sales : item.conversionRate;
+
+    // this is getting silly - TODO- refactor to two functions prepSales and prepConvRate
+    // for sales data only - sum the sales the occur in a single month
+    if (key === "sales" && value) {
+      acc[dataMonth] = (acc[dataMonth] || 0) + value;
+    } else {
+      acc[dataMonth] = value || 0;
+    }
+
+    // acc[dataMonth] = value || [];
     return acc;
   }, {});
 
   let filteredMonths = months;
 
-  // Filter data based on the time frame
+  // Filter data by time frame (12 months by default)
+  // last month
   if (timeFrame === "1") {
-    filteredMonths = months.slice(-1); // Last 1 month
+    filteredMonths = months.slice(-1);
+    // last 3 months
   } else if (timeFrame === "3") {
-    filteredMonths = months.slice(-3); // Last 3 months
+    filteredMonths = months.slice(-3);
+    // last 6 months
   } else if (timeFrame === "6") {
-    filteredMonths = months.slice(-6); // Last 6 months
+    filteredMonths = months.slice(-6);
   }
-
   return filteredMonths.map((month) => ({
     date: month,
-    sales: salesDataMap[month] || 0,
+    [key]: dataMap[month] || 0,
   }));
 };
