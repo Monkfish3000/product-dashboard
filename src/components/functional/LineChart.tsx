@@ -12,19 +12,23 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-import { prepareData } from "../utils/helpers/salesHelpers";
+import { prepareData } from "../../utils/helpers/salesHelpers";
 import { useProduct } from "@/utils/context/ProductContext";
 import { SalesData } from "@/utils/types/sales-types/sales-types";
-import { ConversionData } from "@/utils/types/converion-types/converion-types";
+import { ConversionData } from "@/utils/types/conversion-types/conversion-types";
+import { TrendChart } from "./TrendChart";
+import { RatingsData } from "@/utils/types/ratings-types/ratings-types";
 
 const chartsOverTime = ["Sales Over Time", "Conversion Rate Over Time"];
 
 const LineChart: React.FC<{
   salesData: SalesData;
   conversionData: ConversionData;
-}> = ({ salesData, conversionData }) => {
+  customerRatingsData: RatingsData;
+}> = ({ salesData, conversionData, customerRatingsData }) => {
   const { selectedProd } = useProduct();
 
+  // TODO - types for sales and convRate state
   const [selectedSales, setSelectedSales] = useState<any[]>([]);
   const [selectedConvRate, setSelectedConvRate] = useState<any>([]);
 
@@ -74,7 +78,7 @@ const LineChart: React.FC<{
 
   return selectedProd ? (
     <>
-      <h2 className="text-xl mb-4">Product Sales</h2>
+      <h2 className="chartHeader">Product Sales</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {chartsOverTime.map((chart, index) => {
           const chartData =
@@ -86,7 +90,7 @@ const LineChart: React.FC<{
                   "conversionRate"
                 );
 
-          console.log("inside return chartData --> ", chartData);
+          // console.log("inside return chartData --> ", chartData);
 
           return (
             <div
@@ -169,11 +173,7 @@ const LineChart: React.FC<{
           );
         })}
       </div>
-      <h2 className="text-xl my-5">Customer Reviews Trend</h2>
-
-      <div className="bg-gray-200 h-80 flex items-center justify-center mt-6">
-        <span>Customer Reviews Trend</span>
-      </div>
+      <TrendChart customerRatingsData={customerRatingsData} />
     </>
   ) : null;
 };

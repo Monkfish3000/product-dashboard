@@ -76,3 +76,21 @@ export const getConversionData = async () => {
 
   return conversionData;
 };
+
+export const getAvgRating = async () => {
+  const data = await getAllData();
+
+  if (!data) {
+    console.log("Failed to fetch average ratings data");
+    return null;
+  }
+
+  const avgRating = data.map((item) => {
+    return {
+      productId: item.product.id,
+      avgRating: item.reviewsTrend,
+    };
+  });
+
+  return avgRating;
+};

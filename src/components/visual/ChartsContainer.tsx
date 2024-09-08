@@ -1,10 +1,11 @@
-import { getConversionData, getSalesData } from "@/utils/getData";
+import { getAvgRating, getConversionData, getSalesData } from "@/utils/getData";
 
-import LineChart from "./LineChart";
+import LineChart from "../functional/LineChart";
 
 const ChartsContainer = async () => {
   const salesData = await getSalesData();
   const conversionData = await getConversionData();
+  const customerRatingsData = await getAvgRating();
 
   // fetching data on server
   console.log("inside ChartsContainer (server) salesData --> ", salesData);
@@ -15,7 +16,11 @@ const ChartsContainer = async () => {
 
   return (
     <div className="chartsContainer">
-      <LineChart conversionData={conversionData} salesData={salesData} />
+      <LineChart
+        conversionData={conversionData}
+        salesData={salesData}
+        customerRatingsData={customerRatingsData}
+      />
     </div>
   );
 };
