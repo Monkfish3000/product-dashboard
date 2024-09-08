@@ -1,7 +1,10 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import { useProduct } from "@/utils/context/ProductContext";
-import { ProductSearchProps } from "@/utils/types/product-types/product-types";
+import {
+  ProductInfo,
+  ProductSearchProps,
+} from "@/utils/types/product-types/product-types";
 
 const ProductSearch: React.FC<ProductSearchProps> = ({ productInfo }) => {
   // console.log("inside ProductSearch --> ", productInfo);
@@ -13,11 +16,11 @@ const ProductSearch: React.FC<ProductSearchProps> = ({ productInfo }) => {
   const { selectedProd, setSelectedProd } = useProduct();
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const filteredProducts = productInfo.filter((item: string) =>
+  const filteredProducts = productInfo.filter((item) =>
     item.productName.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  const handleProductSelect = (product) => {
+  const handleProductSelect = (product: ProductInfo) => {
     setSelectedProd(product);
     setSearchTerm(product.productName);
     setDropdownOpen(false);
@@ -26,7 +29,10 @@ const ProductSearch: React.FC<ProductSearchProps> = ({ productInfo }) => {
   // handle closing the dropdown from user interaction
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setDropdownOpen(false);
       }
     };
@@ -46,7 +52,7 @@ const ProductSearch: React.FC<ProductSearchProps> = ({ productInfo }) => {
     }
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
-      document.removeEventListener("keydown", handleClickOutside);
+      document.removeEventListener("keydown", handleEscKeyDown);
     };
   }, [dropdownOpen]);
 

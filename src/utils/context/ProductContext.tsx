@@ -1,17 +1,15 @@
 "use client";
 
 import { createContext, useContext, useState, ReactNode } from "react";
-
-type ProductContextType = {
-  selectedProd: string;
-  productId: number;
-  setSelectedProd: (product: string) => void;
-};
+import {
+  ProductContextType,
+  ProductInfo,
+} from "../types/product-types/product-types";
 
 const ProductContext = createContext<ProductContextType | undefined>(undefined);
 
 export const ProductProvider = ({ children }: { children: ReactNode }) => {
-  const [selectedProd, setSelectedProd] = useState<string>("");
+  const [selectedProd, setSelectedProd] = useState<ProductInfo | null>(null);
 
   return (
     <ProductContext.Provider value={{ selectedProd, setSelectedProd }}>
