@@ -1,5 +1,4 @@
 import { format } from "date-fns";
-import { Sale } from "../types/sales-types/sales-types";
 
 // get months for x-axis
 const generateMonths = () => {
@@ -16,17 +15,31 @@ const generateMonths = () => {
   return months;
 };
 
-// map sales data to months
-export const prepareSalesData = (sales: Sale[], timeFrame: string) => {
+// normalise data for LineChart
+export const prepareData = (
+  data: { date: string; sales?: number; conversionRate?: number }[],
+  timeFrame: string,
+  key: "sales" | "conversionRate"
+) => {
   const months = generateMonths();
-  const salesDataMap = sales.reduce<Record<string, number>>(
-    (acc, sale: Sale) => {
-      const saleMonth = format(new Date(sale.date), "yyyy-MM");
-      acc[saleMonth] = sale.sales;
-      return acc;
-    },
-    {}
-  );
+  const dataMap = data.reduce<Record<string, number>>((acc, item) => {
+    // check format of date
+    const dataMonth =
+      item.date.length > 7 ? format(new Date(item.date), "yyyy-MM") : item.date;
+
+    const value = key === "sales" ? item.sales : item.conversionRate;
+
+    // this is getting silly - TODO- refactor to two functions prepSales and prepConvRate
+    // for sales data only - sum the sales the occur in a single month
+    if (key === "sales" && value) {
+      acc[dataMonth] = (acc[dataMonth] || 0) + value;
+    } else {
+      acc[dataMonth] = value || 0;
+    }
+
+    // acc[dataMonth] = value || [];
+    return acc;
+  }, {});
 
   let filteredMonths = months;
 
@@ -43,6 +56,6 @@ export const prepareSalesData = (sales: Sale[], timeFrame: string) => {
   }
   return filteredMonths.map((month) => ({
     date: month,
-    sales: salesDataMap[month] || 0,
+    [key]: dataMap[month] || 0,
   }));
 };

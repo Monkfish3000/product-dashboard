@@ -12,17 +12,25 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-import { prepareSalesData } from "../utils/helpers/salesHelpers";
+import { prepareData } from "../utils/helpers/salesHelpers";
 import { useProduct } from "@/utils/context/ProductContext";
 import { SalesData } from "@/utils/types/sales-types/sales-types";
+import { ConversionData } from "@/utils/types/converion-types/converion-types";
 
 const chartsOverTime = ["Sales Over Time", "Conversion Rate Over Time"];
 
-const LineChart: React.FC<{ salesData: SalesData }> = ({ salesData }) => {
+const LineChart: React.FC<{
+  salesData: SalesData;
+  conversionData: ConversionData;
+}> = ({ salesData, conversionData }) => {
   const { selectedProd } = useProduct();
+
   const [selectedSales, setSelectedSales] = useState<any[]>([]);
-  console.log("inside LineChart --> ", selectedProd);
-  console.log("inside LineChart salesData --> ", salesData);
+  const [selectedConvRate, setSelectedConvRate] = useState<any>([]);
+
+  // console.log("inside LineChart --> ", selectedProd);
+  // console.log("inside LineChart salesData --> ", salesData);
+  console.log("inside LineChart conversionData --> ", conversionData);
 
   // track first two charts timeframe - initally 12 months
   const [selectedTimeFrames, setSelectedTimeFrames] = useState<
@@ -40,16 +48,27 @@ const LineChart: React.FC<{ salesData: SalesData }> = ({ salesData }) => {
     }));
   };
 
-  // set sales data for selectedProduct
+  // set sales & conversion rate data for selectedProduct
   useEffect(() => {
     if (selectedProd) {
       const productSales = salesData.find(
         (data) => data.productId === selectedProd.productId
       );
+      const conversionRates = conversionData.find(
+        (data) => data.productId === selectedProd.productId
+      );
+
+      // console.log("inside useEffect --> ", conversionRates);
 
       setSelectedSales(productSales ? productSales.sales : []);
+      setSelectedConvRate(
+        conversionRates ? conversionRates.conversionRate : []
+      );
+
+      // console.log("inside useEffect --> ", selectedConvRate);
+      // console.log("inside useEffect selectedSales --> ", selectedSales);
     }
-  }, [selectedProd, salesData]);
+  }, [selectedProd, salesData, conversionData]);
 
   //   console.log("selectedTimeFrames --> ", selectedTimeFrames);
 
@@ -58,10 +77,16 @@ const LineChart: React.FC<{ salesData: SalesData }> = ({ salesData }) => {
       <h2 className="text-xl mb-4">Product Sales</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {chartsOverTime.map((chart, index) => {
-          const filteredSalesData = prepareSalesData(
-            selectedSales,
-            selectedTimeFrames[index]
-          );
+          const chartData =
+            index === 0
+              ? prepareData(selectedSales, selectedTimeFrames[index], "sales")
+              : prepareData(
+                  selectedConvRate,
+                  selectedTimeFrames[index],
+                  "conversionRate"
+                );
+
+          console.log("inside return chartData --> ", chartData);
 
           return (
             <div
@@ -113,7 +138,7 @@ const LineChart: React.FC<{ salesData: SalesData }> = ({ salesData }) => {
               </div>
               <ResponsiveContainer width="100%" height="100%">
                 <Chart
-                  data={filteredSalesData}
+                  data={chartData}
                   margin={{
                     top: 20,
                     right: 30,
@@ -133,7 +158,11 @@ const LineChart: React.FC<{ salesData: SalesData }> = ({ salesData }) => {
                   <YAxis />
                   <Tooltip />
                   <Legend />
-                  <Line type="monotone" dataKey="sales" stroke="#8884d8" />
+                  <Line
+                    type="monotone"
+                    dataKey={index === 0 ? "sales" : "conversionRate"}
+                    stroke="#8884d8"
+                  />
                 </Chart>
               </ResponsiveContainer>
             </div>

@@ -4,7 +4,8 @@ export const getAllData = async () => {
 
   try {
     const res = await fetch("http://localhost:3000/data/data.json", {
-      next: { revalidate: oneHour },
+      // next: { revalidate: oneHour },
+      cache: "no-store",
     });
 
     if (!res.ok) {
@@ -56,4 +57,22 @@ export const getSalesData = async () => {
   });
 
   return salesData;
+};
+
+export const getConversionData = async () => {
+  const data = await getAllData();
+
+  if (!data) {
+    console.log("Failed to fetch conversion data");
+    return null;
+  }
+
+  const conversionData = data.map((item) => {
+    return {
+      productId: item.product.id,
+      conversionRate: item.conversionRates,
+    };
+  });
+
+  return conversionData;
 };
