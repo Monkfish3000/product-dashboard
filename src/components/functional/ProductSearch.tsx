@@ -13,6 +13,7 @@ const ProductSearch: React.FC<ProductSearchProps> = ({ productInfo }) => {
 
   const { selectedProd, setSelectedProd } = useProduct();
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const filteredProducts = productInfo.filter((item) =>
     item.productName.toLowerCase().includes(searchTerm.toLowerCase())
@@ -29,15 +30,18 @@ const ProductSearch: React.FC<ProductSearchProps> = ({ productInfo }) => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
         dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node)
+        !dropdownRef.current.contains(event.target as Node) &&
+        !inputRef.current?.contains(event.target as Node)
       ) {
         setDropdownOpen(false);
+        setSearchTerm("");
       }
     };
 
     const handleEscKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         setDropdownOpen(false);
+        setSearchTerm("");
       }
     };
 
@@ -89,6 +93,7 @@ const ProductSearch: React.FC<ProductSearchProps> = ({ productInfo }) => {
   return (
     <div ref={dropdownRef} className="relative w-full max-w-lg">
       <input
+        ref={inputRef}
         type="text"
         placeholder="Search product or select from list..."
         value={searchTerm}
