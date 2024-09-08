@@ -16,8 +16,8 @@ import { prepareData } from "../../utils/helpers/salesHelpers";
 import { useProduct } from "@/utils/context/ProductContext";
 import { SalesData } from "@/utils/types/sales-types/sales-types";
 import { ConversionData } from "@/utils/types/conversion-types/conversion-types";
-import { TrendChart } from "./TrendChart";
 import { RatingsData } from "@/utils/types/ratings-types/ratings-types";
+import { MonthPicker, TrendChart } from "..";
 
 const chartsOverTime = ["Sales Over Time", "Conversion Rate Over Time"];
 
@@ -93,52 +93,14 @@ const LineChart: React.FC<{
           // console.log("inside return chartData --> ", chartData);
 
           return (
-            <div
-              key={index}
-              className="bg-primary-white shadow-xl rounded-xl opacity-50 h-96"
-            >
+            <div key={index} className="bg-primary-white chart">
               <div className="flex justify-end space-x-2 mb-4 pt-1 pr-1">
-                {/* TODO - btns should be a separate component */}
-                <button
-                  className={`timeFrameBtn ${
-                    selectedTimeFrames[index] === "1"
-                      ? "bg-primary-gray text-white"
-                      : "bg-gray-100 text-gray-700"
-                  }`}
-                  onClick={() => updateTimeFrame(index, "1")}
-                >
-                  1M
-                </button>
-                <button
-                  className={`timeFrameBtn ${
-                    selectedTimeFrames[index] === "3"
-                      ? "bg-primary-gray text-white"
-                      : "bg-gray-100 text-gray-700"
-                  }`}
-                  onClick={() => updateTimeFrame(index, "3")}
-                >
-                  3M
-                </button>
-                <button
-                  className={`timeFrameBtn ${
-                    selectedTimeFrames[index] === "6"
-                      ? "bg-primary-gray text-white"
-                      : "bg-gray-100 text-gray-700"
-                  }`}
-                  onClick={() => updateTimeFrame(index, "6")}
-                >
-                  6M
-                </button>
-                <button
-                  className={`timeFrameBtn ${
-                    selectedTimeFrames[index] === "12"
-                      ? "bg-primary-gray text-white"
-                      : "bg-gray-100 text-gray-700"
-                  }`}
-                  onClick={() => updateTimeFrame(index, "12")}
-                >
-                  12M
-                </button>
+                <MonthPicker
+                  selectedTimeFrame={selectedTimeFrames[index]}
+                  onTimeFrameChange={(timeFrame) =>
+                    updateTimeFrame(index, timeFrame)
+                  }
+                />
               </div>
               <ResponsiveContainer width="100%" height="100%">
                 <Chart

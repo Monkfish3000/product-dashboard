@@ -80,6 +80,10 @@ nav input {
   @apply w-full m-7;
 }
 
+.chart {
+  @apply shadow-xl rounded-xl opacity-50 h-96;
+}
+
 .timeFrameBtn {
   @apply px-3 py-1 rounded-lg text-sm font-medium border;
 }
