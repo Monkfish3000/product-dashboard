@@ -17,17 +17,36 @@ const generateMonths = () => {
 
 // normalise data for LineChart
 export const prepareData = (
-  data: { date: string; sales?: number; conversionRate?: number }[],
+  data: {
+    date: string;
+    sales?: number;
+    conversionRate?: number;
+    avgRating?: number;
+  }[],
   timeFrame: string,
-  key: "sales" | "conversionRate"
+  key: "sales" | "conversionRate" | "averageRating"
 ) => {
   const months = generateMonths();
+
+  console.log("in FN --> ", key);
+  console.log("in FN --> ", data);
+  console.log("in FN --> ", timeFrame);
+
   const dataMap = data.reduce<Record<string, number>>((acc, item) => {
     // check format of date
     const dataMonth =
       item.date.length > 7 ? format(new Date(item.date), "yyyy-MM") : item.date;
 
-    const value = key === "sales" ? item.sales : item.conversionRate;
+    // const value = key === "sales" ? item.sales : item.conversionRate;
+    let value: number | undefined;
+
+    if (key === "sales") {
+      value = item.sales;
+    } else if (key === "conversionRate") {
+      value = item.conversionRate;
+    } else if (key === "averageRating") {
+      value = item.avgRating;
+    }
 
     // this is getting silly - TODO- refactor to two functions prepSales and prepConvRate
     // for sales data only - sum the sales the occur in a single month
@@ -36,8 +55,6 @@ export const prepareData = (
     } else {
       acc[dataMonth] = value || 0;
     }
-
-    // acc[dataMonth] = value || [];
     return acc;
   }, {});
 
