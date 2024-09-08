@@ -16,7 +16,7 @@ import { prepareData } from "../../utils/helpers/data-helpers";
 import { useProduct } from "@/utils/context/ProductContext";
 import { RatingsData } from "@/utils/types/ratings-types/ratings-types";
 
-import { MonthPicker } from "@/components";
+import { DownloadReport, MonthPicker } from "@/components";
 
 const TrendChart: React.FC<{ customerRatingsData: RatingsData }> = ({
   customerRatingsData,
@@ -56,15 +56,16 @@ const TrendChart: React.FC<{ customerRatingsData: RatingsData }> = ({
   };
 
   return (
-    <div className="flex flex-col w-full mt-20 chart">
+    <div className="flex flex-col w-full mt-20 chart relative">
       <div className="flex justify-between items-start mb-4">
         <h2 className="chartHeader">Customer Ratings Trend</h2>
+
         <MonthPicker
           selectedTimeFrame={timeFrame}
           onTimeFrameChange={handleTimeFrameChange}
         />
       </div>
-
+      <DownloadReport />
       {filteredReviewsData.length > 0 ? (
         <div className="flex-grow">
           <ResponsiveContainer width="100%" height="100%">
