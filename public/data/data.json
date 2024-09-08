@@ -100,10 +100,18 @@
       { "date": "2023-11-27", "sales": 8 }
     ],
     "conversionRates": [
-      { "date": "2023-09-01", "conversionRate": 3.0 },
-      { "date": "2023-08-01", "conversionRate": 3.4 },
-      { "date": "2023-07-01", "conversionRate": 3.6 },
-      { "date": "2023-06-01", "conversionRate": 3.8 }
+      { "date": "2024-09", "conversionRate": 2.2 },
+      { "date": "2024-08", "conversionRate": 3.9 },
+      { "date": "2024-07", "conversionRate": 2.1 },
+      { "date": "2024-06", "conversionRate": 6.0 },
+      { "date": "2024-05", "conversionRate": 4.5 },
+      { "date": "2024-04", "conversionRate": 2.1 },
+      { "date": "2024-03", "conversionRate": 3.2 },
+      { "date": "2024-02", "conversionRate": 4.0 },
+      { "date": "2024-01", "conversionRate": 3.4 },
+      { "date": "2023-12", "conversionRate": 2.3 },
+      { "date": "2023-11", "conversionRate": 4.0 },
+      { "date": "2023-10", "conversionRate": 3.5 }
     ],
     "reviewsTrend": [
       { "date": "2023-09-01", "rating": 4.7 },
@@ -142,8 +150,18 @@
       { "date": "2023-11-25", "sales": 9 }
     ],
     "conversionRates": [
-      { "date": "2023-09-01", "conversionRate": 4.0 },
-      { "date": "2023-08-01", "conversionRate": 4.2 }
+      { "date": "2024-09", "conversionRate": 2.9 },
+      { "date": "2024-08", "conversionRate": 3.1 },
+      { "date": "2024-07", "conversionRate": 3.3 },
+      { "date": "2024-06", "conversionRate": 3.5 },
+      { "date": "2024-05", "conversionRate": 3.2 },
+      { "date": "2024-04", "conversionRate": 3.4 },
+      { "date": "2024-03", "conversionRate": 3.6 },
+      { "date": "2024-02", "conversionRate": 3.8 },
+      { "date": "2024-01", "conversionRate": 4.0 },
+      { "date": "2023-12", "conversionRate": 3.7 },
+      { "date": "2023-11", "conversionRate": 3.9 },
+      { "date": "2023-10", "conversionRate": 4.1 }
     ],
     "reviewsTrend": [
       { "date": "2023-09-01", "rating": 4.5 },
@@ -179,7 +197,20 @@
       { "date": "2023-11-23", "sales": 5 },
       { "date": "2023-11-30", "sales": 6 }
     ],
-    "conversionRates": [{ "date": "2023-09-01", "conversionRate": 3.9 }],
+    "conversionRates": [
+      { "date": "2024-09", "conversionRate": 4.0 },
+      { "date": "2024-08", "conversionRate": 4.2 },
+      { "date": "2024-07", "conversionRate": 4.3 },
+      { "date": "2024-06", "conversionRate": 4.5 },
+      { "date": "2024-05", "conversionRate": 4.1 },
+      { "date": "2024-04", "conversionRate": 4.3 },
+      { "date": "2024-03", "conversionRate": 4.6 },
+      { "date": "2024-02", "conversionRate": 4.7 },
+      { "date": "2024-01", "conversionRate": 4.5 },
+      { "date": "2023-12", "conversionRate": 4.4 },
+      { "date": "2023-11", "conversionRate": 4.2 },
+      { "date": "2023-10", "conversionRate": 4.3 }
+    ],
     "reviewsTrend": [{ "date": "2023-09-01", "rating": 4.8 }],
     "latestComments": [
       {
@@ -211,7 +242,20 @@
       { "date": "2023-11-15", "sales": 6 },
       { "date": "2023-11-24", "sales": 9 }
     ],
-    "conversionRates": [{ "date": "2023-09-01", "conversionRate": 3.5 }],
+    "conversionRates": [
+      { "date": "2024-09", "conversionRate": 3.6 },
+      { "date": "2024-08", "conversionRate": 3.7 },
+      { "date": "2024-07", "conversionRate": 3.9 },
+      { "date": "2024-06", "conversionRate": 4.0 },
+      { "date": "2024-05", "conversionRate": 3.8 },
+      { "date": "2024-04", "conversionRate": 4.0 },
+      { "date": "2024-03", "conversionRate": 4.1 },
+      { "date": "2024-02", "conversionRate": 4.3 },
+      { "date": "2024-01", "conversionRate": 4.2 },
+      { "date": "2023-12", "conversionRate": 4.0 },
+      { "date": "2023-11", "conversionRate": 3.9 },
+      { "date": "2023-10", "conversionRate": 4.0 }
+    ],
     "reviewsTrend": [{ "date": "2023-09-01", "rating": 4.9 }],
     "latestComments": [
       {
