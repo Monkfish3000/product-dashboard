@@ -12,7 +12,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-import { prepareData } from "../../utils/helpers/salesHelpers";
+import { prepareData } from "../../utils/helpers/data-helpers";
 import { useProduct } from "@/utils/context/ProductContext";
 import { SalesData } from "@/utils/types/sales-types/sales-types";
 import { ConversionData } from "@/utils/types/conversion-types/conversion-types";

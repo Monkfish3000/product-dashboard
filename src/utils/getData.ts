@@ -1,3 +1,5 @@
+import { ProductData } from "./types/data-types/data-types";
+
 export const getAllData = async () => {
   // revalidate data every hour
   const oneHour = 3600;
@@ -30,7 +32,7 @@ export const getProductInfo = async () => {
     return null;
   }
 
-  const productInfo = data.map((item) => {
+  const productInfo = data.map((item: ProductData) => {
     return {
       productName: item.product.name,
       productId: item.product.id,
@@ -49,7 +51,7 @@ export const getSalesData = async () => {
     return null;
   }
 
-  const salesData = data.map((item) => {
+  const salesData = data.map((item: ProductData) => {
     return {
       productId: item.product.id,
       sales: item.sales,
@@ -67,7 +69,7 @@ export const getConversionData = async () => {
     return null;
   }
 
-  const conversionData = data.map((item) => {
+  const conversionData = data.map((item: ProductData) => {
     return {
       productId: item.product.id,
       conversionRate: item.conversionRates,
@@ -85,7 +87,7 @@ export const getAvgRating = async () => {
     return null;
   }
 
-  const avgRating = data.map((item) => {
+  const avgRating = data.map((item: ProductData) => {
     return {
       productId: item.product.id,
       avgRating: item.reviewsTrend,
@@ -93,4 +95,22 @@ export const getAvgRating = async () => {
   });
 
   return avgRating;
+};
+
+export const getComments = async () => {
+  const data = await getAllData();
+
+  if (!data) {
+    console.log("Failed to fetch average ratings data");
+    return null;
+  }
+
+  const comments = data.map((item: ProductData) => {
+    return {
+      productId: item.product.id,
+      comments: item.latestComments,
+    };
+  });
+
+  return comments;
 };

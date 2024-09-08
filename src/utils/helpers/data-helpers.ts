@@ -28,9 +28,9 @@ export const prepareData = (
 ) => {
   const months = generateMonths();
 
-  console.log("in FN --> ", key);
-  console.log("in FN --> ", data);
-  console.log("in FN --> ", timeFrame);
+  // console.log("in FN --> ", data);
+  // console.log("in FN --> ", timeFrame);
+  // console.log("in FN --> ", key);
 
   const dataMap = data.reduce<Record<string, number>>((acc, item) => {
     // check format of date
@@ -48,7 +48,7 @@ export const prepareData = (
       value = item.avgRating;
     }
 
-    // this is getting silly - TODO- refactor to two functions prepSales and prepConvRate
+    // TODO: refactor to separate functions for normalising data depending on the data
     // for sales data only - sum the sales the occur in a single month
     if (key === "sales" && value) {
       acc[dataMonth] = (acc[dataMonth] || 0) + value;

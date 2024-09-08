@@ -12,7 +12,7 @@ import {
   Legend,
 } from "recharts";
 
-import { prepareData } from "../../utils/helpers/salesHelpers";
+import { prepareData } from "../../utils/helpers/data-helpers";
 import { useProduct } from "@/utils/context/ProductContext";
 import { RatingsData } from "@/utils/types/ratings-types/ratings-types";
 
