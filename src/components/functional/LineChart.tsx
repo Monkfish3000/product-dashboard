@@ -15,7 +15,7 @@ import {
 import { prepareData } from "../../utils/helpers/salesHelpers";
 import { useProduct } from "@/utils/context/ProductContext";
 import { SalesData } from "@/utils/types/sales-types/sales-types";
-import { ConversionData } from "@/utils/types/converion-types/converion-types";
+import { ConversionData } from "@/utils/types/conversion-types/conversion-types";
 import { TrendChart } from "./TrendChart";
 import { RatingsData } from "@/utils/types/ratings-types/ratings-types";
 
