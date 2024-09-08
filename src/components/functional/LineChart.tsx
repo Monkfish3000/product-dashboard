@@ -17,7 +17,7 @@ import { useProduct } from "@/utils/context/ProductContext";
 import { SalesData } from "@/utils/types/sales-types/sales-types";
 import { ConversionData } from "@/utils/types/conversion-types/conversion-types";
 import { RatingsData } from "@/utils/types/ratings-types/ratings-types";
-import { MonthPicker, TrendChart } from "@/components";
+import { DownloadReport, MonthPicker, TrendChart } from "@/components";
 
 const chartsOverTime = ["Sales Over Time", "Conversion Rate Over Time"];
 
@@ -93,7 +93,7 @@ const LineChart: React.FC<{
           // console.log("inside return chartData --> ", chartData);
 
           return (
-            <div key={index} className="bg-primary-white chart">
+            <div key={index} className="bg-primary-white chart relative">
               <div className="flex justify-end space-x-2 mb-4 pt-1 pr-1">
                 <MonthPicker
                   selectedTimeFrame={selectedTimeFrames[index]}
@@ -101,6 +101,7 @@ const LineChart: React.FC<{
                     updateTimeFrame(index, timeFrame)
                   }
                 />
+                <DownloadReport />
               </div>
               <ResponsiveContainer width="100%" height="100%">
                 <Chart

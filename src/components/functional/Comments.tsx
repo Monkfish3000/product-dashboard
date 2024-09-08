@@ -26,7 +26,7 @@ const Comment: React.FC<{ commentsData: CommentData[] }> = ({
       <h2 className="chartHeader w-full opacity-50">
         Latest Customer Comments
       </h2>
-      <div className="commentsSection text-left w-full opacity-50 shadow-xl">
+      <div className="commentsSection text-left w-full opacity-80 shadow-xl">
         {productComments?.comments?.length ? (
           productComments.comments.map(({ id, author, text }) => (
             <div key={id} className="comment">

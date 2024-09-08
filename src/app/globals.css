@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Background grid styling */
 .background {
   width: 100vw;
   min-height: 100vh;
@@ -64,6 +65,7 @@ main {
   @apply text-primary-black relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6;
 }
 
+/* Nav Styling */
 nav {
   @apply text-primary-black py-4 px-6 shadow-lg flex items-center w-full;
 }
@@ -72,9 +74,13 @@ nav input {
   @apply w-2/3 px-4 py-2 text-primary-black rounded-md focus:outline-none focus:border-primary-black focus:ring-1 focus:ring-primary-black;
 }
 
+/* Product Card styling */
+
 .productInfo {
   @apply text-primary-black shadow-lg rounded-lg p-4 mt-4 max-w-md ml-0 mx-auto border;
 }
+
+/* Charts Styling */
 
 .chartsContainer {
   @apply w-full m-7;
@@ -94,38 +100,36 @@ nav input {
 
 /* Comments Styling */
 .commentsSection {
-  padding: 1.5rem;
-  background-color: #f9f9f9;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  @apply p-6 bg-primary-white rounded-lg shadow-md;
 }
 
 .commentsSection h2 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: #333;
+  @apply text-xl font-semibold mb-4 text-gray-800;
 }
 
 .comment {
-  padding: 1rem;
-  border-bottom: 1px solid #e0e0e0;
+  @apply p-4 border-b border-primary-gray;
 }
 
 .comment:last-child {
-  border-bottom: none;
+  @apply border-none;
 }
 
 .comment p {
-  margin: 0.5rem 0;
+  @apply my-2;
 }
 
 .comment strong {
-  display: block;
-  font-weight: 600;
-  color: #555;
+  @apply block font-semibold text-primary-gray;
 }
 
 .comment p:last-child {
-  color: #666;
+  @apply text-primary-gray;
+}
+
+/* Download Report */
+.downloadBtn {
+  @apply absolute text-xs top-10 right-2 bg-primary-gray text-primary-white 
+  py-1 px-2 rounded transition duration-300 ease-in-out border border-transparent 
+  hover:bg-white hover:text-primary-gray hover:border-primary-gray;
 }

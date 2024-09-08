@@ -7,3 +7,4 @@ export { default as TrendChart } from "./functional/TrendChart";
 export { default as MonthPicker } from "./common/MonthPicker";
 export { default as CommentsContainer } from "./visual/CommentsContainer";
 export { default as Comments } from "./functional/Comments";
+export { default as DownloadReport } from "./common/DownloadReport";
