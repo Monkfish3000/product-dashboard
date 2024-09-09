@@ -19,7 +19,7 @@ After the inital set up of the project repo I created a 'development' branch spe
 
 **Prerequisites**
 
-1. Node.js installed version 18.17+
+1. Node.js installed version 18+
 2. npm
 
 **Set up**
