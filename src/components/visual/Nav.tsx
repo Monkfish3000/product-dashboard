@@ -1,4 +1,4 @@
-import { getAllData, getProductInfo } from "@/utils/getData";
+import { getAllData, getProductInfo } from "@/utils/fetch-data/getData";
 import { ProductSearch } from "@/components";
 
 const Nav = async () => {
