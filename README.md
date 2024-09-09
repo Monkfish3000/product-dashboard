@@ -1,6 +1,6 @@
 # E-commerce product dashboard
 
-This project is a product dashboard for an e-commerce platform built using Next.js 14 and deployed to Vercel. In the example app deployed the users can search for, or selected from the dropdown, guitar FX pedals sales, conversion rates and average customer rating from the previous 1, 3, 6 or 12 months.
+This project is a product dashboard for an e-commerce platform built using Next.js 14. In the example app deployed the users can search for, or selected from the dropdown, guitar FX pedals sales, conversion rates and average customer rating from the previous 1, 3, 6 or 12 months.
 For each pedal (product) the user can also see the last five comments left by customers.
 
 ## Features
@@ -56,7 +56,7 @@ npm run dev
 
 ## SSR and data fetching
 
-I chose to build the app in Next 14 as I wanted to take advantage of Next 14 and the ability to render components on the server that comes "out of the box" with Next 13+. As well as the built in optimizations that come with Next. Additionally, as I intended to deploy the finished app on Vercel - Next obviously integrates very well with Vercel - this made further sense.
+I chose to build the app in Next 14 as I wanted to take advantage of Next 14 and the ability to render components on the server that comes "out of the box" with Next 13+. As well as the built in optimizations that come with Next. Additionally, as I intend to deploy the finished app on Vercel - Next obviously integrates very well with Vercel - this made further sense.
 I tried to strucuture my app so that all the data (mock data in a JSON) was fetched in server components - on the server - and then passed down into client components that needed to be interactive.
 
 ## Styling
