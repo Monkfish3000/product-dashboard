@@ -87,7 +87,7 @@ nav input {
 }
 
 .chart {
-  @apply shadow-xl rounded-xl opacity-50 h-96;
+  @apply shadow-xl rounded-xl opacity-50 h-96 w-full;
 }
 
 .timeFrameBtn {
@@ -134,7 +134,7 @@ nav input {
 
 /* Download Report */
 .downloadBtn {
-  @apply absolute text-xs top-10 right-2 bg-primary-gray text-primary-white 
+  @apply hidden md:flex absolute text-xs top-10 right-2 bg-primary-gray text-primary-white 
   py-1 px-2 rounded transition duration-300 ease-in-out border border-transparent 
   hover:bg-white hover:text-primary-gray hover:border-primary-gray;
 }

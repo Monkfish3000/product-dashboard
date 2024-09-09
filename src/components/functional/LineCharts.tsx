@@ -78,7 +78,7 @@ const LineChart: React.FC<{
   return selectedProd ? (
     <>
       <h2 className="chartHeader">Product Sales</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-6">
         {chartsOverTime.map((chart, index) => {
           const chartData =
             index === 0
@@ -109,7 +109,7 @@ const LineChart: React.FC<{
                     top: 20,
                     right: 30,
                     left: 20,
-                    bottom: 20,
+                    bottom: 70,
                   }}
                 >
                   <CartesianGrid strokeDasharray="3 3" />
@@ -120,6 +120,11 @@ const LineChart: React.FC<{
                         month: "short",
                       })
                     }
+                    label={{
+                      position: "insideBottom",
+                      offset: -5,
+                      style: { fill: "#666" },
+                    }}
                   />
                   <YAxis />
                   <Tooltip />
