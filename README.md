@@ -70,6 +70,11 @@ My components I have organised into 'functional', 'visual' and 'common' - there 
 At the start of the project I intended to use a combination of tailwind and CSS modules. My intention was to use tailwind for styling the container components and the general layout of the app. And then to use CSS modules to be more precise in styling some of the jsx elements and for adding in specific animations to elements. However, in the end as the project progressed I realised that I was able to rely on tailwind exclusively.
 The exception being the styling of the background grid that was my starting canvas. This was done in plain css and inspired heavily by the creators of - https://dub.co/
 
+## Charts
+
+For the charts I considered a number of libraries - chart.js I am very familiar with and have used a lot in the past. D3.js also looks interesting albeit a little too complex for the needs of this project. In the end I chose recharts.js that is in fact built with D3. 
+I also considered using shadcn in combination with recharts for certain elements but in the found I could do everything I needed using tailwind and recharts. Maybe for future enhancements I will include shadcn as it is very customisable and lightweight - allowing just the components you want to be downloaded and not an entire components library. 
+
 ## Future enhancements
 
 In terms of fetching data, using the enhanced 'fetch' that is built in to Next was very convenient - given that Next takes care of a lot of the caching for you (another advantage), I had to remind myself to manually invalidate the data when I was setting up the project and making changes to it. I then had to remember to set a cache revalidation policy - which I set to one hour. Probably adequate for an analtyics app but easy to modify if needed.
