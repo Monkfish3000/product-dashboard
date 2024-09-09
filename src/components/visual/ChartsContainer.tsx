@@ -1,4 +1,8 @@
-import { getAvgRating, getConversionData, getSalesData } from "@/utils/getData";
+import {
+  getAvgRating,
+  getConversionData,
+  getSalesData,
+} from "@/utils/fetch-data/getData";
 
 import { LineChart } from "@/components";
 

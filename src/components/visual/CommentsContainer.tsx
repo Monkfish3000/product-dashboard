@@ -1,4 +1,4 @@
-import { getComments } from "@/utils/getData";
+import { getComments } from "@/utils/fetch-data/getData";
 
 import { Comments } from "@/components";
 
