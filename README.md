@@ -64,12 +64,14 @@ I tried to strucuture my app so that all the data (mock data in a JSON) was fetc
 At the start of the project I intended to use a combination of tailwind and CSS modules. My intention was to use tailwind for styling the container components and the general layout of the app. And then to use CSS modules to be more precise in styling some of the jsx elements and for adding in specific animations to elements. However, in the end as the project progressed I realised that I was able to rely on tailwind exclusively.
 The exception being the styling of the background grid that was my starting canvas. This was done in plain css and inspired heavily by the creators of - https://dub.co/
 
-# Future enhancements
+## Future enhancements
 
 In terms of fetching data, using the enhanced 'fetch' that is built in to Next was very convenient - given that Next takes care of a lot of the caching for you (another advantage), I had to remind myself to manually invalidate the data when I was setting up the project and making changes to it. I then had to remember to set a cache revalidation policy - which I set to one hour. Probably adequate for an analtyics app but easy to modify if needed.
 Moving forwards I would look to implement an ORM - probably Prism, which also integrates well with Next and would allow for more sophisticated data fetching and improve maintainability and scalability.
 
 In terms of UX - there are some aspects of the search bar that I am not happy with. My first fix will be to clear the search term as soon as the user clicks away so that the user can quickly and easily search another product without having to manually delete the current one from the search bar. Or, I will add a small 'x' to the end of the bar that the user can click to quickly clear the search bar.
+
+Additionally, when the dashboard first loads there is just a blank screen, before the user selects a product and views the data. I will address this by displaying a placeholder or welcome message or something other than a blank screen. 
 
 When the graphs are displayed in 1 and 3 months - it would be much better to display the data by day (1 month) and week (3 month) so that the user can have a much deeper insight into their data.
 
