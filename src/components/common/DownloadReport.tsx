@@ -17,13 +17,12 @@ const DownloadReport: React.FC<{
       return;
     }
 
+    // sheet name cannot exceed 31 chars
+    const sheetName = `Prod Data(${selectedProd?.slice(0, 20) || "Unknown"})`;
+
     const worksheet = utils.json_to_sheet(data);
     const workbook = utils.book_new();
-    utils.book_append_sheet(
-      workbook,
-      worksheet,
-      `Product Data(${selectedProd})`
-    );
+    utils.book_append_sheet(workbook, worksheet, sheetName);
 
     writeFile(
       workbook,
