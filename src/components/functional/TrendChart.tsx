@@ -65,7 +65,12 @@ const TrendChart: React.FC<{ customerRatingsData: RatingsData }> = ({
           onTimeFrameChange={handleTimeFrameChange}
         />
       </div>
-      <DownloadReport />
+      <DownloadReport
+        data={filteredReviewsData}
+        selectedProd={selectedProd?.productName}
+        fileName="average-rating"
+        timeFrame={timeFrame}
+      />
       {filteredReviewsData.length > 0 ? (
         <div className="flex-grow">
           <ResponsiveContainer width="100%" height="100%">
