@@ -56,7 +56,7 @@ const TrendChart: React.FC<{ customerRatingsData: RatingsData }> = ({
   };
 
   return (
-    <div className="flex flex-col w-full mt-20 chart relative">
+    <div className="flex flex-col mt-20 chart relative">
       <div className="flex justify-between items-start mb-4">
         <h2 className="chartHeader">Customer Ratings Trend</h2>
 
