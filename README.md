@@ -59,6 +59,12 @@ npm run dev
 I chose to build the app in Next 14 as I wanted to take advantage of Next 14 and the ability to render components on the server that comes "out of the box" with Next 13+. As well as the built in optimizations that come with Next. Additionally, as I intend to deploy the finished app on Vercel - Next obviously integrates very well with Vercel - this made further sense.
 I tried to strucuture my app so that all the data (mock data in a JSON) was fetched in server components - on the server - and then passed down into client components that needed to be interactive.
 
+## Dir structure
+
+This being a Next app I wanted the dashboard to be the "home page" but I didn't want 'dashboard' in the url so I created a hidden dashboard route in the app dir and then removed the page.tsx file from the app dir, leaving only layout.tsx. This was a deliberate decision so that dashboard would be the '/' page (for now) but it meant that in the future it would be easy to add a new page.tsx in the app dir that would be the "home page" - e.g. a sign in page or welcome page - and I could remove the () from the dashboard dir and easily have everything there on the /dashboard route. 
+
+My components I have organised into 'functional', 'visual' and 'common' - there may be a little crossover but generally the 'visual' component are containers and server components that don't need any user interaction. The 'functional' components are all client components. 
+
 ## Styling
 
 At the start of the project I intended to use a combination of tailwind and CSS modules. My intention was to use tailwind for styling the container components and the general layout of the app. And then to use CSS modules to be more precise in styling some of the jsx elements and for adding in specific animations to elements. However, in the end as the project progressed I realised that I was able to rely on tailwind exclusively.
