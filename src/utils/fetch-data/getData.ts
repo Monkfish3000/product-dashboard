@@ -1,4 +1,4 @@
-import { ProductData } from "./types/data-types/data-types";
+import { ProductData } from "../types/data-types/data-types";
 
 export const getAllData = async () => {
   const baseUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
