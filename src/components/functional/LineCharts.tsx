@@ -33,7 +33,7 @@ const LineChart: React.FC<{
 
   // console.log("inside LineChart --> ", selectedProd);
   // console.log("inside LineChart salesData --> ", salesData);
-  console.log("inside LineChart conversionData --> ", conversionData);
+  // console.log("inside LineChart conversionData --> ", conversionData);
 
   // track first two charts timeframe - initally 12 months
   const [selectedTimeFrames, setSelectedTimeFrames] = useState<
@@ -100,7 +100,16 @@ const LineChart: React.FC<{
                     updateTimeFrame(index, timeFrame)
                   }
                 />
-                <DownloadReport />
+                <DownloadReport
+                  data={chartData}
+                  selectedProd={selectedProd.productName}
+                  fileName={
+                    chart === "Sales Over Time"
+                      ? "sales-data"
+                      : "conversion-rate-data"
+                  }
+                  timeFrame={selectedTimeFrames[index]}
+                />
               </div>
               <ResponsiveContainer width="100%" height="100%">
                 <Chart
