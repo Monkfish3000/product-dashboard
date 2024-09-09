@@ -1,7 +1,17 @@
+import {
+  ChartsContainer,
+  Nav,
+  ProductInfo,
+  CommentsContainer,
+} from "@/components";
+
 export default async function Dashboard() {
   return (
     <>
-      <h1>Dashboard</h1>
+      <Nav />
+      <ProductInfo />
+      <ChartsContainer />
+      <CommentsContainer />
     </>
   );
 }

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+
+import { ProductProvider } from "@/utils/context/ProductContext";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -24,10 +26,9 @@ export default function RootLayout({
         <div className="background">
           <div className="gradient"></div>
         </div>
-        <main>
-          {/* <Nav /> */}
-          {children}
-        </main>
+        <ProductProvider>
+          <main>{children}</main>
+        </ProductProvider>
       </body>
     </html>
   );

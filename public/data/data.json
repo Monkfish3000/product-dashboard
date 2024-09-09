@@ -1,0 +1,392 @@
+[
+  {
+    "product": {
+      "id": 1,
+      "name": "Tubescreamer"
+    },
+    "inventory": 120,
+    "sales": [
+      { "date": "2024-09-12", "sales": 10 },
+      { "date": "2024-09-23", "sales": 8 },
+      { "date": "2024-08-05", "sales": 15 },
+      { "date": "2024-08-17", "sales": 7 },
+      { "date": "2024-07-11", "sales": 9 },
+      { "date": "2024-07-22", "sales": 6 },
+      { "date": "2024-06-04", "sales": 12 },
+      { "date": "2024-05-09", "sales": 14 },
+      { "date": "2024-04-15", "sales": 5 },
+      { "date": "2024-03-12", "sales": 11 },
+      { "date": "2024-02-18", "sales": 13 },
+      { "date": "2023-12-10", "sales": 6 },
+      { "date": "2023-11-21", "sales": 8 },
+      { "date": "2023-11-29", "sales": 7 }
+    ],
+    "conversionRates": [
+      { "date": "2024-09", "conversionRate": 3.2 },
+      { "date": "2024-08", "conversionRate": 3.5 },
+      { "date": "2024-07", "conversionRate": 3.8 },
+      { "date": "2024-06", "conversionRate": 4.0 },
+      { "date": "2024-05", "conversionRate": 3.7 },
+      { "date": "2024-04", "conversionRate": 3.9 },
+      { "date": "2024-03", "conversionRate": 4.1 },
+      { "date": "2024-02", "conversionRate": 4.3 },
+      { "date": "2024-01", "conversionRate": 4.5 },
+      { "date": "2023-12", "conversionRate": 4.2 },
+      { "date": "2023-11", "conversionRate": 4.4 },
+      { "date": "2023-10", "conversionRate": 4.6 }
+    ],
+    "reviewsTrend": [
+      { "date": "2024-07", "avgRating": 4.3 },
+      { "date": "2024-08", "avgRating": 4.1 },
+      { "date": "2024-06", "avgRating": 4.0 },
+      { "date": "2024-09", "avgRating": 4.2 },
+      { "date": "2024-05", "avgRating": 4.4 },
+      { "date": "2024-04", "avgRating": 4.2 },
+      { "date": "2024-03", "avgRating": 4.5 },
+      { "date": "2024-02", "avgRating": 4.3 },
+      { "date": "2024-01", "avgRating": 4.1 },
+      { "date": "2023-12", "avgRating": 4.0 },
+      { "date": "2023-11", "avgRating": 4.1 },
+      { "date": "2023-10", "avgRating": 4.3 }
+    ],
+    "latestComments": [
+      {
+        "id": 1,
+        "author": "John Doe",
+        "text": "Classic overdrive tone, perfect for blues!"
+      },
+      {
+        "id": 2,
+        "author": "Jane Smith",
+        "text": "A must-have pedal for any guitarist."
+      },
+      {
+        "id": 3,
+        "author": "Sam Wilson",
+        "text": "Great build quality, iconic sound."
+      },
+      {
+        "id": 4,
+        "author": "Alex Johnson",
+        "text": "Doesn’t disappoint, versatile and reliable."
+      },
+      {
+        "id": 5,
+        "author": "Emily Davis",
+        "text": "Perfect for smooth, creamy overdrive."
+      }
+    ]
+  },
+  {
+    "product": {
+      "id": 2,
+      "name": "Big Muff Pi"
+    },
+    "inventory": 90,
+    "sales": [
+      { "date": "2024-09-15", "sales": 12 },
+      { "date": "2024-09-27", "sales": 10 },
+      { "date": "2024-08-09", "sales": 16 },
+      { "date": "2024-08-22", "sales": 5 },
+      { "date": "2024-07-10", "sales": 7 },
+      { "date": "2024-07-18", "sales": 9 },
+      { "date": "2024-06-08", "sales": 14 },
+      { "date": "2024-05-11", "sales": 15 },
+      { "date": "2024-04-05", "sales": 6 },
+      { "date": "2024-03-19", "sales": 13 },
+      { "date": "2024-02-12", "sales": 11 },
+      { "date": "2023-12-02", "sales": 4 },
+      { "date": "2023-11-13", "sales": 6 },
+      { "date": "2023-11-27", "sales": 8 }
+    ],
+    "conversionRates": [
+      { "date": "2024-09", "conversionRate": 2.2 },
+      { "date": "2024-08", "conversionRate": 3.9 },
+      { "date": "2024-07", "conversionRate": 2.1 },
+      { "date": "2024-06", "conversionRate": 6.0 },
+      { "date": "2024-05", "conversionRate": 4.5 },
+      { "date": "2024-04", "conversionRate": 2.1 },
+      { "date": "2024-03", "conversionRate": 3.2 },
+      { "date": "2024-02", "conversionRate": 4.0 },
+      { "date": "2024-01", "conversionRate": 3.4 },
+      { "date": "2023-12", "conversionRate": 2.3 },
+      { "date": "2023-11", "conversionRate": 4.0 },
+      { "date": "2023-10", "conversionRate": 3.5 }
+    ],
+    "reviewsTrend": [
+      { "date": "2024-07", "avgRating": 4.7 },
+      { "date": "2024-08", "avgRating": 4.6 },
+      { "date": "2024-06", "avgRating": 4.8 },
+      { "date": "2024-09", "avgRating": 4.5 },
+      { "date": "2024-05", "avgRating": 4.9 },
+      { "date": "2024-04", "avgRating": 4.7 },
+      { "date": "2024-03", "avgRating": 4.6 },
+      { "date": "2024-02", "avgRating": 4.8 },
+      { "date": "2024-01", "avgRating": 4.7 },
+      { "date": "2023-12", "avgRating": 4.6 },
+      { "date": "2023-11", "avgRating": 4.8 },
+      { "date": "2023-10", "avgRating": 4.9 }
+    ],
+    "latestComments": [
+      {
+        "id": 1,
+        "author": "Chris Taylor",
+        "text": "Massive fuzz, just what I needed for those heavy riffs."
+      },
+      {
+        "id": 2,
+        "author": "Lisa Collins",
+        "text": "Raw, powerful, and perfect for grunge."
+      },
+      {
+        "id": 3,
+        "author": "Jack W.",
+        "text": "A key part of my tone. Adds depth and warmth."
+      },
+      {
+        "id": 4,
+        "author": "Emily Brown",
+        "text": "It’s a fuzz pedal classic for a reason!"
+      },
+      {
+        "id": 5,
+        "author": "Michael Harris",
+        "text": "Love the sustain and the rich harmonic overtones."
+      }
+    ]
+  },
+  {
+    "product": {
+      "id": 3,
+      "name": "Boss DS-1"
+    },
+    "inventory": 200,
+    "sales": [
+      { "date": "2024-09-02", "sales": 14 },
+      { "date": "2024-09-28", "sales": 9 },
+      { "date": "2024-08-03", "sales": 13 },
+      { "date": "2024-08-21", "sales": 7 },
+      { "date": "2024-07-07", "sales": 8 },
+      { "date": "2024-07-15", "sales": 10 },
+      { "date": "2024-06-02", "sales": 11 },
+      { "date": "2024-05-19", "sales": 12 },
+      { "date": "2024-04-08", "sales": 9 },
+      { "date": "2024-03-24", "sales": 8 },
+      { "date": "2024-02-10", "sales": 10 },
+      { "date": "2023-12-15", "sales": 5 },
+      { "date": "2023-11-19", "sales": 7 },
+      { "date": "2023-11-25", "sales": 9 }
+    ],
+    "conversionRates": [
+      { "date": "2024-09", "conversionRate": 2.9 },
+      { "date": "2024-08", "conversionRate": 3.1 },
+      { "date": "2024-07", "conversionRate": 3.3 },
+      { "date": "2024-06", "conversionRate": 3.5 },
+      { "date": "2024-05", "conversionRate": 3.2 },
+      { "date": "2024-04", "conversionRate": 3.4 },
+      { "date": "2024-03", "conversionRate": 3.6 },
+      { "date": "2024-02", "conversionRate": 3.8 },
+      { "date": "2024-01", "conversionRate": 4.0 },
+      { "date": "2023-12", "conversionRate": 3.7 },
+      { "date": "2023-11", "conversionRate": 3.9 },
+      { "date": "2023-10", "conversionRate": 4.1 }
+    ],
+    "reviewsTrend": [
+      { "date": "2024-07", "avgRating": 3.8 },
+      { "date": "2024-08", "avgRating": 3.9 },
+      { "date": "2024-06", "avgRating": 3.7 },
+      { "date": "2024-09", "avgRating": 4.0 },
+      { "date": "2024-05", "avgRating": 3.9 },
+      { "date": "2024-04", "avgRating": 3.8 },
+      { "date": "2024-03", "avgRating": 4.1 },
+      { "date": "2024-02", "avgRating": 4.0 },
+      { "date": "2024-01", "avgRating": 3.9 },
+      { "date": "2023-12", "avgRating": 4.1 },
+      { "date": "2023-11", "avgRating": 4.0 },
+      { "date": "2023-10", "avgRating": 4.2 }
+    ],
+    "latestComments": [
+      {
+        "id": 1,
+        "author": "Sarah Johnson",
+        "text": "A staple in my rig for that classic distortion."
+      },
+      {
+        "id": 2,
+        "author": "David Evans",
+        "text": "Perfect for cutting through the mix with sharp, crisp distortion."
+      },
+      {
+        "id": 3,
+        "author": "Jessica Lee",
+        "text": "The DS-1 gives me that crunchy, defined sound I love."
+      },
+      {
+        "id": 4,
+        "author": "Brian Carter",
+        "text": "It’s reliable and sounds great on every setting."
+      },
+      {
+        "id": 5,
+        "author": "Olivia Clark",
+        "text": "You just can't go wrong with this pedal, no matter the genre."
+      }
+    ]
+  },
+  {
+    "product": {
+      "id": 4,
+      "name": "MXR Carbon Copy Analog Delay"
+    },
+    "inventory": 70,
+    "sales": [
+      { "date": "2024-09-18", "sales": 11 },
+      { "date": "2024-09-25", "sales": 10 },
+      { "date": "2024-08-13", "sales": 12 },
+      { "date": "2024-08-27", "sales": 9 },
+      { "date": "2024-07-06", "sales": 6 },
+      { "date": "2024-07-20", "sales": 8 },
+      { "date": "2024-06-09", "sales": 13 },
+      { "date": "2024-05-17", "sales": 14 },
+      { "date": "2024-04-04", "sales": 4 },
+      { "date": "2024-03-11", "sales": 7 },
+      { "date": "2024-02-21", "sales": 9 },
+      { "date": "2023-12-09", "sales": 6 },
+      { "date": "2023-11-23", "sales": 5 },
+      { "date": "2023-11-30", "sales": 6 }
+    ],
+    "conversionRates": [
+      { "date": "2024-09", "conversionRate": 4.0 },
+      { "date": "2024-08", "conversionRate": 4.2 },
+      { "date": "2024-07", "conversionRate": 4.3 },
+      { "date": "2024-06", "conversionRate": 4.5 },
+      { "date": "2024-05", "conversionRate": 4.1 },
+      { "date": "2024-04", "conversionRate": 4.3 },
+      { "date": "2024-03", "conversionRate": 4.6 },
+      { "date": "2024-02", "conversionRate": 4.7 },
+      { "date": "2024-01", "conversionRate": 4.5 },
+      { "date": "2023-12", "conversionRate": 4.4 },
+      { "date": "2023-11", "conversionRate": 4.2 },
+      { "date": "2023-10", "conversionRate": 4.3 }
+    ],
+    "reviewsTrend": [
+      { "date": "2024-07", "avgRating": 4.5 },
+      { "date": "2024-08", "avgRating": 4.4 },
+      { "date": "2024-06", "avgRating": 4.6 },
+      { "date": "2024-09", "avgRating": 4.7 },
+      { "date": "2024-05", "avgRating": 4.3 },
+      { "date": "2024-04", "avgRating": 4.4 },
+      { "date": "2024-03", "avgRating": 4.6 },
+      { "date": "2024-02", "avgRating": 4.5 },
+      { "date": "2024-01", "avgRating": 4.4 },
+      { "date": "2023-12", "avgRating": 4.3 },
+      { "date": "2023-11", "avgRating": 4.2 },
+      { "date": "2023-10", "avgRating": 4.6 }
+    ],
+    "latestComments": [
+      {
+        "id": 1,
+        "author": "Anna White",
+        "text": "Incredible analog delay, warm and natural."
+      },
+      {
+        "id": 2,
+        "author": "Jonny Greenwood",
+        "text": "The modulation is subtle, but it adds so much texture."
+      },
+      {
+        "id": 3,
+        "author": "Sophia Scott",
+        "text": "The repeats are lush and sit perfectly in the mix."
+      },
+      {
+        "id": 4,
+        "author": "Jacob Young",
+        "text": "Beautiful delay pedal with rich, dark repeats."
+      },
+      {
+        "id": 5,
+        "author": "Grace Wilson",
+        "text": "It’s analog, and it’s brilliant. So musical!"
+      }
+    ]
+  },
+  {
+    "product": {
+      "id": 5,
+      "name": "Electro-Harmonix Holy Grail Reverb"
+    },
+    "inventory": 50,
+    "sales": [
+      { "date": "2024-09-03", "sales": 10 },
+      { "date": "2024-09-20", "sales": 9 },
+      { "date": "2024-08-07", "sales": 13 },
+      { "date": "2024-08-30", "sales": 8 },
+      { "date": "2024-07-12", "sales": 6 },
+      { "date": "2024-07-19", "sales": 7 },
+      { "date": "2024-06-11", "sales": 10 },
+      { "date": "2024-05-22", "sales": 12 },
+      { "date": "2024-04-17", "sales": 5 },
+      { "date": "2024-03-07", "sales": 8 },
+      { "date": "2024-02-05", "sales": 10 },
+      { "date": "2023-12-04", "sales": 4 },
+      { "date": "2023-11-15", "sales": 6 },
+      { "date": "2023-11-24", "sales": 9 }
+    ],
+    "conversionRates": [
+      { "date": "2024-09", "conversionRate": 3.6 },
+      { "date": "2024-08", "conversionRate": 3.7 },
+      { "date": "2024-07", "conversionRate": 3.9 },
+      { "date": "2024-06", "conversionRate": 4.0 },
+      { "date": "2024-05", "conversionRate": 3.8 },
+      { "date": "2024-04", "conversionRate": 4.0 },
+      { "date": "2024-03", "conversionRate": 4.1 },
+      { "date": "2024-02", "conversionRate": 4.3 },
+      { "date": "2024-01", "conversionRate": 4.2 },
+      { "date": "2023-12", "conversionRate": 4.0 },
+      { "date": "2023-11", "conversionRate": 3.9 },
+      { "date": "2023-10", "conversionRate": 4.0 }
+    ],
+    "reviewsTrend": [
+      { "date": "2024-07", "avgRating": 3.5 },
+      { "date": "2024-08", "avgRating": 3.6 },
+      { "date": "2024-06", "avgRating": 3.7 },
+      { "date": "2024-09", "avgRating": 3.8 },
+      { "date": "2024-05", "avgRating": 3.5 },
+      { "date": "2024-04", "avgRating": 3.7 },
+      { "date": "2024-03", "avgRating": 3.6 },
+      { "date": "2024-02", "avgRating": 3.8 },
+      { "date": "2024-01", "avgRating": 3.7 },
+      { "date": "2023-12", "avgRating": 3.5 },
+      { "date": "2023-11", "avgRating": 3.6 },
+      { "date": "2023-10", "avgRating": 3.9 }
+    ],
+    "latestComments": [
+      {
+        "id": 1,
+        "author": "Kurt C.",
+        "text": "The spring reverb is spot on, and the Flerb is just fun."
+      },
+      {
+        "id": 2,
+        "author": "Megan Adams",
+        "text": "Great, spacious reverb. It’s on my board for a reason."
+      },
+      {
+        "id": 3,
+        "author": "Daniel Cooper",
+        "text": "The hall setting is breathtaking, fills the room perfectly."
+      },
+      {
+        "id": 4,
+        "author": "Zoe Roberts",
+        "text": "Versatile, with a classic tone that brings life to the guitar sound."
+      },
+      {
+        "id": 5,
+        "author": "Lucas King",
+        "text": "It’s ethereal and magical, great for ambient sounds."
+      }
+    ]
+  }
+]
