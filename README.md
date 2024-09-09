@@ -13,7 +13,7 @@ For each pedal (product) the user can also see the last five comments left by cu
 
 ## Branching and workflow
 
-After the inital set up of the project repo I created a 'development' branch specifically for working on the project. All tasks were branched from development, completed and then pushed back into development. At the end of the project I merged development into main. The project is deployed from master on Vercel.
+After the inital set up of the project repo I created a 'development' branch specifically for working on the project. All tasks were branched from development, completed and then pushed back into development. At the end of the project I merged development into main. The project is deployed from main on Vercel.
 
 ## Set up and run
 
