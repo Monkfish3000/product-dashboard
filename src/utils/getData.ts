@@ -1,13 +1,13 @@
 import { ProductData } from "./types/data-types/data-types";
 
 export const getAllData = async () => {
-  // revalidate data every hour
+  const baseUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
   const oneHour = 3600;
 
   try {
-    const res = await fetch("http://localhost:3000/data/data.json", {
-      // next: { revalidate: oneHour },
-      cache: "no-store",
+    const res = await fetch(`${baseUrl}/data/data.json`, {
+      // revalidate data every hour
+      next: { revalidate: oneHour },
     });
 
     if (!res.ok) {

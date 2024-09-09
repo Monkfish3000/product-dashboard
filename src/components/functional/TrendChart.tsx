@@ -31,11 +31,11 @@ const TrendChart: React.FC<{ customerRatingsData: RatingsData }> = ({
 
   const [timeFrame, setTimeFrame] = useState("12");
 
-  console.log("inside TrendChart --> ", customerRatingsData);
+  // console.log("inside TrendChart --> ", customerRatingsData);
 
   useEffect(() => {
     if (selectedProd) {
-      console.log(selectedProd.productId);
+      // console.log(selectedProd.productId);
       const reviewsTrend = customerRatingsData.find(
         (data) => data.productId === selectedProd.productId
       );
