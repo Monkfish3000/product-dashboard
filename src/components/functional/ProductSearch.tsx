@@ -88,7 +88,7 @@ const ProductSearch: React.FC<ProductSearchProps> = ({ productInfo }) => {
     };
   }, [dropdownOpen, highlightedIndex, filteredProducts]);
 
-  console.log("inside ProductSearch --> ", selectedProd);
+  // console.log("inside ProductSearch --> ", selectedProd);
 
   return (
     <div ref={dropdownRef} className="relative w-full max-w-lg">
